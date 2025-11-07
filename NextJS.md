@@ -81,3 +81,20 @@ app/
 ├── docs/
 │   └── [...slug]/
 │       └── page.tsx             → /docs/a/b/c (catch-all)
+
+<!-- Nested Dynamic Routing -->
+
+In Next.js, dynamic routing is achieved using square brackets ([param]) in folder or file names. Nested dynamic routing means placing one dynamic route inside another—useful for hierarchical data like products and their reviews, categories and posts, or users and their settings.
+
+NB : params is asynchronous and must be wrapped using await.
+
+For this URL - /product/42/reviews/7
+
+The folder structure will be---
+src/
+└── app/
+    └── product/
+        └── [productId]/
+            └── reviews/
+                └── [reviewId]/
+                    └── page.tsx
