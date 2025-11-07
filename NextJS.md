@@ -114,3 +114,12 @@ src/
 - Matches /docs/setup → params.slug = ['setup']
 - Matches /docs/setup/install → params.slug = ['setup', 'install']
 - Matches /docs/setup/install/deploy → params.slug = ['setup', 'install', 'deploy']
+
+<!-- Error Page Customisation -->
+- Create a file not-found in the app folder and addd your custom styling.
+src/
+└── app/
+    ├── not-found.tsx         ← Global 404 page
+    └── blog/
+        ├── page.tsx
+        └── not-found.tsx     ← Blog-specific 404 page
