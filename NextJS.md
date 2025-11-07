@@ -168,3 +168,6 @@ head.tsx → Sets metadata like <title> and <meta>
     └── (marketing)/          ← Route group (not in URL)
         └── home/
             └── page.tsx      ← Accessible at /home
+
+<!-- Layout in Next Js -->
+- A layout is a UI that is shared across multiple pages.
