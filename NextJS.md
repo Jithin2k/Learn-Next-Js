@@ -60,3 +60,24 @@ app/
 │   ├── page.tsx           → /dashboard
 │   └── settings/
 │       └── page.tsx       → /dashboard/settings
+
+<!-- Dynamic Routes -->
+- Dynamic routing lets you create pages that respond to variable URL segments, like /product/123 or /blog/react-hooks.
+You define dynamic segments using square brackets in folder names: [param]
+
+
+app/
+├── page.tsx                     → /
+├── product/
+│   └── [productId]/
+│       └── page.tsx             → /product/:productId
+├── blog/
+│   └── [slug]/
+│       └── page.tsx             → /blog/:slug
+├── user/
+│   └── [userId]/
+│       └── settings/
+│           └── page.tsx         → /user/:userId/settings
+├── docs/
+│   └── [...slug]/
+│       └── page.tsx             → /docs/a/b/c (catch-all)
