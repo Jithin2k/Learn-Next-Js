@@ -39,48 +39,49 @@
 - URL you can access are determined by how you organize your files and folders in your code
 
 <!-- Routing Conventions -->
+
 - All Routes must live in the app folder.
 - Routes files must be named page.js or page.tsx
 - Each folder represents a segment of the URL path
 
 app/
-├── page.tsx               → /
+├── page.tsx → /
 ├── about/
-│   └── page.tsx           → /about
+│ └── page.tsx → /about
 ├── menu/
-│   └── page.tsx           → /menu
+│ └── page.tsx → /menu
 ├── menu/
-│   └── drinks/
-│       └── page.tsx       → /menu/drinks
+│ └── drinks/
+│ └── page.tsx → /menu/drinks
 ├── blog/
-│   └── [slug]/
-│       └── page.tsx       → /blog/:slug (dynamic route)
+│ └── [slug]/
+│ └── page.tsx → /blog/:slug (dynamic route)
 ├── dashboard/
-│   ├── layout.tsx         → layout for all /dashboard routes
-│   ├── page.tsx           → /dashboard
-│   └── settings/
-│       └── page.tsx       → /dashboard/settings
+│ ├── layout.tsx → layout for all /dashboard routes
+│ ├── page.tsx → /dashboard
+│ └── settings/
+│ └── page.tsx → /dashboard/settings
 
 <!-- Dynamic Routes -->
-- Dynamic routing lets you create pages that respond to variable URL segments, like /product/123 or /blog/react-hooks.
-You define dynamic segments using square brackets in folder names: [param]
 
+- Dynamic routing lets you create pages that respond to variable URL segments, like /product/123 or /blog/react-hooks.
+  You define dynamic segments using square brackets in folder names: [param]
 
 app/
-├── page.tsx                     → /
+├── page.tsx → /
 ├── product/
-│   └── [productId]/
-│       └── page.tsx             → /product/:productId
+│ └── [productId]/
+│ └── page.tsx → /product/:productId
 ├── blog/
-│   └── [slug]/
-│       └── page.tsx             → /blog/:slug
+│ └── [slug]/
+│ └── page.tsx → /blog/:slug
 ├── user/
-│   └── [userId]/
-│       └── settings/
-│           └── page.tsx         → /user/:userId/settings
+│ └── [userId]/
+│ └── settings/
+│ └── page.tsx → /user/:userId/settings
 ├── docs/
-│   └── [...slug]/
-│       └── page.tsx             → /docs/a/b/c (catch-all)
+│ └── [...slug]/
+│ └── page.tsx → /docs/a/b/c (catch-all)
 
 <!-- Nested Dynamic Routing -->
 
@@ -93,8 +94,23 @@ For this URL - /product/42/reviews/7
 The folder structure will be---
 src/
 └── app/
-    └── product/
-        └── [productId]/
-            └── reviews/
-                └── [reviewId]/
-                    └── page.tsx
+└── product/
+└── [productId]/
+└── reviews/
+└── [reviewId]/
+└── page.tsx
+
+<!-- Catch All Segments -->
+
+- Catch-all segments allow a single route file to handle any number of URL segments. This is useful when you don’t know how deep the path will go.
+
+- src/
+  └── app/
+  └── docs/
+  └── [[...slug]]/
+  └── page.tsx
+- What does it mean? 
+- Matches /docs → params.slug = undefined
+- Matches /docs/setup → params.slug = ['setup']
+- Matches /docs/setup/install → params.slug = ['setup', 'install']
+- Matches /docs/setup/install/deploy → params.slug = ['setup', 'install', 'deploy']
