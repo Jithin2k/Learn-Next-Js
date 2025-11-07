@@ -37,3 +37,26 @@
 
 - Next Js use a file system based routing system.
 - URL you can access are determined by how you organize your files and folders in your code
+
+<!-- Routing Conventions -->
+- All Routes must live in the app folder.
+- Routes files must be named page.js or page.tsx
+- Each folder represents a segment of the URL path
+
+app/
+├── page.tsx               → /
+├── about/
+│   └── page.tsx           → /about
+├── menu/
+│   └── page.tsx           → /menu
+├── menu/
+│   └── drinks/
+│       └── page.tsx       → /menu/drinks
+├── blog/
+│   └── [slug]/
+│       └── page.tsx       → /blog/:slug (dynamic route)
+├── dashboard/
+│   ├── layout.tsx         → layout for all /dashboard routes
+│   ├── page.tsx           → /dashboard
+│   └── settings/
+│       └── page.tsx       → /dashboard/settings
