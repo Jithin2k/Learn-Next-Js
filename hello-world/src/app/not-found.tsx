@@ -1,6 +1,6 @@
 export default function NotFound ()  {
   return(
 <div>
-<h1>OOps error!</h1></div>
+<h1>Global Error</h1></div>
   )
 }

@@ -109,17 +109,20 @@ src/
   └── docs/
   └── [[...slug]]/
   └── page.tsx
-- What does it mean? 
+- What does it mean?
 - Matches /docs → params.slug = undefined
 - Matches /docs/setup → params.slug = ['setup']
 - Matches /docs/setup/install → params.slug = ['setup', 'install']
 - Matches /docs/setup/install/deploy → params.slug = ['setup', 'install', 'deploy']
 
 <!-- Error Page Customisation -->
+
 - Create a file not-found in the app folder and addd your custom styling.
+  not-found.tsx is a strict convention in Next.js App Router (introduced in Next.js 13+). It’s the only filename Next.js recognizes for rendering a custom 404 page within a route segment.
+
 src/
 └── app/
-    ├── not-found.tsx         ← Global 404 page
-    └── blog/
-        ├── page.tsx
-        └── not-found.tsx     ← Blog-specific 404 page
+├── not-found.tsx ← Global 404 page
+└── blog/
+├── page.tsx
+└── not-found.tsx ← Blog-specific 404 page
