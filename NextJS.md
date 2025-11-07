@@ -158,3 +158,13 @@ head.tsx → Sets metadata like <title> and <meta>
   │ └── theme.css
   └── \_tests/ ← Test files
   └── dashboard.test.tsx
+
+  <!-- Route Groups in Next Js -->
+
+  - Route groups in Next.js App Router let you organize your folder structure without affecting the URL path. They’re perfect for co-locating layouts, separating concerns, or grouping related routes—without exposing the folder name in the route.
+
+  - src/
+└── app/
+    └── (marketing)/          ← Route group (not in URL)
+        └── home/
+            └── page.tsx      ← Accessible at /home
