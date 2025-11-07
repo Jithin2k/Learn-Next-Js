@@ -128,14 +128,33 @@ src/
 └── not-found.tsx ← Blog-specific 404 page
 
 <!-- Safe Co-Location of files -->
+
 Safe co-location means you can place non-routing files (like components, styles, tests, or helpers) inside route folders without exposing them as public routes. Next.js only treats specific files like page.tsx, layout.tsx, route.ts, and loading.tsx as part of the routing system.
 
 <!-- Reserved File Names -->
 
-page.tsx         → Defines the route’s content
-layout.tsx       → Wraps child routes with shared UI
-loading.tsx      → Suspense fallback while loading
-error.tsx        → Error boundary for runtime errors
-not-found.tsx    → Custom 404 page for unmatched routes
-route.ts         → Defines custom API routes (GET, POST, etc.)
-head.tsx         → Sets metadata like <title> and <meta>
+page.tsx → Defines the route’s content
+layout.tsx → Wraps child routes with shared UI
+loading.tsx → Suspense fallback while loading
+error.tsx → Error boundary for runtime errors
+not-found.tsx → Custom 404 page for unmatched routes
+route.ts → Defines custom API routes (GET, POST, etc.)
+head.tsx → Sets metadata like <title> and <meta>
+
+<!-- Private Folders in Next Js -->
+
+- Prefix folders with \_ (e.g., \_components, \_lib) to signal they’re not routes.
+- Next.js will not treat these folders as route segments.
+- You can import from them like normal
+  src/
+  └── app/
+  ├── dashboard/
+  │ ├── page.tsx
+  │ └── \_components/ ← Private folder
+  │ └── Sidebar.tsx
+  ├── \_lib/ ← Shared utilities
+  │ └── fetcher.ts
+  ├── \_styles/ ← Global or scoped styles
+  │ └── theme.css
+  └── \_tests/ ← Test files
+  └── dashboard.test.tsx
