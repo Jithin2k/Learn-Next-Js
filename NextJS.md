@@ -126,3 +126,16 @@ src/
 └── blog/
 ├── page.tsx
 └── not-found.tsx ← Blog-specific 404 page
+
+<!-- Safe Co-Location of files -->
+Safe co-location means you can place non-routing files (like components, styles, tests, or helpers) inside route folders without exposing them as public routes. Next.js only treats specific files like page.tsx, layout.tsx, route.ts, and loading.tsx as part of the routing system.
+
+<!-- Reserved File Names -->
+
+page.tsx         → Defines the route’s content
+layout.tsx       → Wraps child routes with shared UI
+loading.tsx      → Suspense fallback while loading
+error.tsx        → Error boundary for runtime errors
+not-found.tsx    → Custom 404 page for unmatched routes
+route.ts         → Defines custom API routes (GET, POST, etc.)
+head.tsx         → Sets metadata like <title> and <meta>
