@@ -10,3 +10,17 @@
 - Styling
 - Optimization
 - Dev and prod build system.
+
+<!-- How to create your NextJS app? -->
+- npx create-next-app@latest
+- Enter projext name
+- TypeScript ✅️
+- ESLint ✅️
+- React Compiler ✅️
+- Tailwind CSS ✅️
+- src/dir ✅️
+- App Router ✅️
+- TurboPack ❌
+- import alias ❌
+
+--- To open app in browser use --> npm run dev
